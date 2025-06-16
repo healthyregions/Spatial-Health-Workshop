@@ -4,25 +4,25 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Intro to R-Spatial for Healthy Places</title>
+  <title>Intro to Spatial Analysis in R for Health</title>
   <meta name="description" content="This was developed by the Healthy Regions - Policies Lab." />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Intro to R-Spatial for Healthy Places" />
+  <meta property="og:title" content="Intro to Spatial Analysis in R for Health" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This was developed by the Healthy Regions - Policies Lab." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Intro to R-Spatial for Healthy Places" />
+  <meta name="twitter:title" content="Intro to Spatial Analysis in R for Health" />
   
   <meta name="twitter:description" content="This was developed by the Healthy Regions - Policies Lab." />
   
 
 
 
-<meta name="date" content="2023-06-13" />
+<meta name="date" content="2025-06-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,21 +51,11 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -75,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -99,11 +89,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
+code span.at { color: #204a87; } /* Attribute */
 code span.bn { color: #0000cf; } /* BaseN */
 code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
+code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #8f5902; font-style: italic; } /* Comment */
 code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
@@ -112,14 +102,14 @@ code span.dv { color: #0000cf; } /* DecVal */
 code span.er { color: #a40000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
 code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
 code span.ot { color: #8f5902; } /* Other */
 code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
 code span.ss { color: #4e9a06; } /* SpecialString */
 code span.st { color: #4e9a06; } /* String */
 code span.va { color: #000000; } /* Variable */
@@ -147,6 +137,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Background</a>
 <ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#commitment"><i class="fa fa-check"></i>Commitment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#environment-setup"><i class="fa fa-check"></i>Environment Setup</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Intro to Spatial Data</a>
@@ -215,7 +206,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to R-Spatial for Healthy Places</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to Spatial Analysis in R for Health</a>
           </h1>
         </div>
 
@@ -224,17 +215,21 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Intro to R-Spatial for Healthy Places</h1>
-<p class="date"><em>2023-06-13</em></p>
+<h1 class="title">Intro to Spatial Analysis in R for Health</h1>
+<p class="date"><em>2025-06-15</em></p>
 </div>
 <div id="background" class="section level2 unnumbered hasAnchor">
 <h2>Background<a href="index.html#background" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This suite of tutorials was developed for a workshop at the 2021 R-Medicine Conference by the <a href="http://www.healthyregions.org">Healthy Regions &amp; Policies Lab</a> at the University of Illinois. It has sinced been updated for multiple workshops at the Society for Epidemiology Research Annual Meeting. This workbook is a quick (3-hour) overview of mapping, GIScience, and spatial analysis basics for health professionals.</p>
+<p>This suite of tutorials was originally developed for a workshop at the 2021 R-Medicine Conference by the <a href="http://www.healthyregions.org">Healthy Regions &amp; Policies Lab</a> at the University of Illinois. It has sinced been updated for multiple workshops at the Society for Epidemiology Research Annual Meeting, and as a workshop at the Institute of Medicine at the University of Gothenburg (Göteborg).</p>
 <p>The workbook was compiled by Marynia Kolak, co-facilitated with Qinyun Lin, with past support from Susan Paykin when HEROP was at the University of Chicago. Some coding snippets &amp; data examples are from the phenomenal team of the <a href="https://geodacenter.github.io/opioid-environment-toolkit">Opioid Environment Toolkit</a> (Moksha Menghaney, Qinyun Lin, Angela Li). The overall approach follows the Center for Spatial Data Science UChicago paradigm, led by Luc Anselin &amp; Julia Koschinsky.</p>
+<div id="commitment" class="section level3 unnumbered hasAnchor">
+<h3>Commitment<a href="index.html#commitment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This workbook is a 3-4 hour, fast-paced overview of mapping, GIScience, and spatial analysis basics for health professionals. When including extensive live coding, support, and additional practice in-person or at home on your own, it can be extended to a week-long program at minimum. You are encouraged to update with your own data finds after each example.</p>
+</div>
 <div id="environment-setup" class="section level3 unnumbered hasAnchor">
 <h3>Environment Setup<a href="index.html#environment-setup" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A basic understanding of R is assumed. This workshop requires several packages, which can be installed from CRAN:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>, <span class="st">&quot;tmap&quot;</span>, <span class="st">&quot;tidygeocoder&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>, <span class="st">&quot;tmap&quot;</span>, <span class="st">&quot;tidygeocoder&quot;</span>)</span></code></pre></div>
 <p>For Mac users, check out <a href="https://github.com/r-spatial/sf" class="uri">https://github.com/r-spatial/sf</a> for additional tips if you run into errors when installing the <strong>sf</strong> package. Using homebrew to install <strong>gdal</strong> usually fixes any remaining issues.</p>
 
 </div>
@@ -259,42 +254,42 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
 });
 });
 </script>
