@@ -14,11 +14,11 @@ Plus, we will have a new spatial layer, that includes the actual service areas (
 Let's first reload our spatial data -- this will be the MOUD points, plus the master zip code spatial file.
 
 ```{r warning = FALSE}
-#library(sf)
-#library(tmap)
+library(sf)
+library(tmap)
 
 points <- st_read("data/methadoneMOUD.geojson")
-areas <- st_read("data/geo_export_54bc15d8-5ef5-40e4-8f72-bb0c6dbac9a5.shp")
+areas <- st_read("data/ChiZipMaster.geojson")
 
 dim(points)
 dim(areas)
@@ -141,8 +141,6 @@ tm_shape(areas) + tm_polygons(col = "bufferct", palette = "BuGn", n=5, style = "
     tm_shape(points) + tm_dots(col = "gray10", size = 0.3) 
 ```
 
-## Integrate & Explore
-
 Let's review: our master area file now has total number resources by zip and total number of walkable service areas by zip. 
 
 Using your new spatial file, see if you can answer some of these quetions using various queries:
@@ -155,4 +153,22 @@ Using your new spatial file, see if you can answer some of these quetions using 
 
 Generate different maps and outputs to drive your thinking and defend your hypothesis formation.
 
+Finally, don't forget to **save your data**!
 
+## Practice in Sweden {-}
+
+Identify a resource as a point dataset in Sweden. Then:
+
+1. Calculate count of resources per DeSo.
+2. Calculate a reasonable buffer distance for each resource, according to transit behavior expected.
+3. Calculate count of buffers per DeSo.
+
+## More Resources {-}
+
+Ready for the next step in calculating spatial access metrics and analying point patterns?
+
+- Nearest distance analysis:  https://geodacenter.github.io/opioid-environment-toolkit/centroid-access-tutorial.html 
+
+- Point pattern analyses: https://mgimond.github.io/Spatial/point-pattern-analysis-in-r.html
+
+- Rapid Realistic Routing (r5r): Routable transit metrics & travel time matrix generation:  https://ipeagit.github.io/r5r/articles/r5r.html

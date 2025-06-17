@@ -34,4 +34,3 @@ count-resources-by-area
 count-per-area
 buffer-data
 count-buffers-by-area
-integrate-explore

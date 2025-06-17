@@ -15,7 +15,7 @@ Chi_Zipsf <- st_read("data/ChiZipMaster.geojson")
 
 After inspecting your dataset again, map your variable of interest, *Cumulative Covid Case Rate*, developed previously. 
 
-```{r}
+```{r, message=FALSE}
 # head(Chi_Zipsf) 
 
 tm_shape(Chi_Zipsf) +
@@ -48,8 +48,8 @@ Next, we'll generate multiple spatial weightws for comparison and hypothesis gen
 
 ```{r}
 w.rook <- rook_weights(Chi_Zipsf)
-w.queen <- queen_weights(Chi_Zipsf)
-w.queen2 <- queen_weights(Chi_Zipsf, order = 2, include_lower_order = TRUE)
+#w.queen <- queen_weights(Chi_Zipsf)
+#w.queen2 <- queen_weights(Chi_Zipsf, order = 2, include_lower_order = TRUE)
 ```
 
 ## Calculate LISA

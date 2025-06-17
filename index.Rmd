@@ -13,19 +13,18 @@ description: "This was developed by the Healthy Regions and Policies Lab."
 
 ## Background {-}
 
-This suite of tutorials was originally developed for a workshop at the 2021 R-Medicine Conference by the [Healthy Regions & Policies Lab](http://www.healthyregions.org) at the University of Illinois. It has sinced been updated for multiple workshops at the Society for Epidemiology Research Annual Meeting, and as a workshop at the Institute of Medicine at the University of Gothenburg (Göteborg). 
+The workbook is led by Marynia Kolak, Director of the [Healthy Regions & Policies Lab](http://www.healthyregions.org) (HEROP), currently based at the University of Illinois at Urbana Champaign. Workshops have been co-facilitated with Qinyun Lin, with past support from Susan Paykin when HEROP was at the University of Chicago. 
 
-The workbook was compiled by Marynia Kolak, co-facilitated with Qinyun Lin, with past support from Susan Paykin when HEROP was at the University of Chicago. Some coding snippets & data examples are from the phenomenal team of the [Opioid Environment Toolkit](https://geodacenter.github.io/opioid-environment-toolkit) (Moksha Menghaney, Qinyun Lin, Angela Li). The overall approach follows the Center for Spatial Data Science UChicago paradigm, led by Luc Anselin & Julia Koschinsky.
+This suite of tutorials was originally developed for a workshop at the 2021 R-Medicine Conference, and has sinced been updated for multiple workshops at the Society for Epidemiology Research Annual Meeting, and as a workshop at the Institute of Medicine at the University of Gothenburg (Göteborg). 
 
-### Commitment {-}
-This workbook is a 3-4 hour, fast-paced overview of mapping, GIScience, and spatial analysis basics for health professionals. When including extensive live coding, support, and additional practice in-person or at home on your own, it can be extended to a week-long program at minimum. You are encouraged to update with your own data finds after each example.
+Some coding snippets & data examples are from the phenomenal team of the [Opioid Environment Toolkit](https://geodacenter.github.io/opioid-environment-toolkit) (Moksha Menghaney, Qinyun Lin, Angela Li). The overall approach follows the Center for Spatial Data Science UChicago paradigm.
 
 ### Access Resources {-}
 There are multiple resources linked with this workbook. Access the following as needed:
 
 - Data for the workshop: [Zip File](https://github.com/healthyregions/Spatial-Health-Workshop/blob/main/data/Data-2025.zip)
 - [Github repository](https://github.com/healthyregions/Spatial-Health-Workshop) of the workshop
-- Short link to this workbook: [go.illinois.edu/RSpatial](go.illinois.edu/RSpatial)
+- Short link to this workbook: [go.illinois.edu/SpatialR]((https://go.illinois.edu/SpatialR)
 - Slide deck for latest workshop: [Sweden 2025](https://docs.google.com/presentation/d/1FDbxNdHZ4D75wRWKchArLYSGatzgEsDDJr2S2EzCfHs/edit?usp=sharing)
 
 ### Environment Setup {-}
@@ -39,3 +38,7 @@ install.packages("sf", "tmap", "tidygeocoder", "rgeoda")
 For Mac users, check out https://github.com/r-spatial/sf for additional tips if you run into errors when installing the **sf** package. Using homebrew to install **gdal** usually fixes any remaining issues.
 
 Be sure to download the [data](https://github.com/healthyregions/Spatial-Health-Workshop/blob/main/data/Data-2025.zip) in the working directory of your R environment. In the examples, data reside in a folder called "data" of the main working directory.
+
+
+### Commitment {-}
+This workbook is a 3-4 hour, fast-paced overview of mapping, GIScience, and spatial analysis basics for health professionals. When including extensive live coding, support, and additional practice in-person or at home on your own, it can be extended to a week-long program at minimum. You are encouraged to update with your own data finds after each example.

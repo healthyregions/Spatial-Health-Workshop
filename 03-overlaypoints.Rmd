@@ -208,3 +208,14 @@ Save any data you need from this session.
 ```{r eval=FALSE}
 st_write(methadoneSf, dsn = "data/methadoneMOUD.geojson")
 ```
+
+
+## Practice in Sweden {-}
+
+Identify a resource as a point dataset in Sweden. Then:
+
+1. Bring it into the workspace, and do any data wrangling necessary to ensure it is rendered as a spatial data format in the right CRS.
+2. Transform the CRS of the point dataset to the same CRS of the data you used prior, of DeSo boundaries in Sweden.
+3. Overlay the points on top of the DeSo areas, and make a pretty map. 
+
+**Tip:** you can "zoom" into the area of the points by plotting them first, or using the `bbox` parameter in the `tm_shape` function of your DeSo dataset.

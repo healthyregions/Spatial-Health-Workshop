@@ -43,7 +43,7 @@ Next, let's merge this data to our zip code master spatial file. Reload if neces
 ```{r}
 library(sf)
 
-Chi_Zips = st_read("data/geo_export_54bc15d8-5ef5-40e4-8f72-bb0c6dbac9a5.shp")
+Chi_Zips = st_read("data/chicago_zips1.shp")
 
 head(Chi_Zips)
 ```
@@ -180,7 +180,9 @@ In modern spatial epidemiology, associations must never be taken at face value. 
 We're  done! Well... not so fast. Let's save the data so we don't have to run the codebook again to access the data. Here, we'll save as a `geojson` file. This spatial format is more forgiving with long column names, which is a long-standing challenge with shapefiles. But sometimes it can be written oddly, so double-check the dimensions when reading in later.
 
 ```{r eval=FALSE}
-#st_write(Chi_Zipsf, "data/ChiZipMaster.geojson", driver = "GeoJSON")
+#Chi_Zipsf_recast <- st_cast(Chi_Zipsf, "MULTIPOLYGON")
+
+#st_write(Chi_Zipsf_recast, "data/ChiZipMaster.geojson", driver = "GeoJSON")
 ```
 
 We could also just  the data as a `CSV` file which may be easier for future linking. For this, we use the `st_drop_geometry()` function to remove the geometry data, so we're just left with the attributes.
@@ -188,6 +190,14 @@ We could also just  the data as a `CSV` file which may be easier for future link
 ```{r eval=FALSE}
 #write.csv(st_drop_geometry(Chi_Zipsf), "data/ChiZipMaster.csv")
 ```
+
+## Practice in Sweden {-}
+
+The data folder has a dataset entitled `sweden_income_2022.csv`. Bring it into the workspace. Then:
+
+1. Bring it into the workspace, and inspect. Prepare for a merge.
+2. Merge the income-level data to the DeSo dataset you worked with in the prior practice. Inspect.
+3. Generate a series of choropleth maps of **median income** using different styles. Select the best, and explain why you identified it as such.
 
 ## More Resources {-}
 

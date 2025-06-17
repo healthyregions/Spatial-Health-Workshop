@@ -180,7 +180,7 @@ How do census tract areas correspond to zip codes? While tracts better represent
 First, we read in zip code boundaries. This data was downloaded directly from the *City of Chicago Data Portal* as a shapefile.
 
 ```{r }
-Chi_Zips = st_read("data/geo_export_54bc15d8-5ef5-40e4-8f72-bb0c6dbac9a5.shp")
+Chi_Zips = st_read("data/chicago_zips1.shp")
 
 ```
 

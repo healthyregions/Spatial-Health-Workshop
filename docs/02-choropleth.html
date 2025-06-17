@@ -152,9 +152,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Background</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#commitment"><i class="fa fa-check"></i>Commitment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#access-resources"><i class="fa fa-check"></i>Access Resources</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#environment-setup"><i class="fa fa-check"></i>Environment Setup</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#commitment"><i class="fa fa-check"></i>Commitment</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Intro to Spatial Data</a>
 <ul>
@@ -184,6 +184,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="02-choropleth.html"><a href="02-choropleth.html#integrate-more-data"><i class="fa fa-check"></i><b>2.6</b> Integrate More Data</a></li>
 <li class="chapter" data-level="2.7" data-path="02-choropleth.html"><a href="02-choropleth.html#thematic-map-panel"><i class="fa fa-check"></i><b>2.7</b> Thematic Map Panel</a></li>
 <li class="chapter" data-level="2.8" data-path="02-choropleth.html"><a href="02-choropleth.html#data"><i class="fa fa-check"></i><b>2.8</b> Data</a></li>
+<li class="chapter" data-level="" data-path="02-choropleth.html"><a href="02-choropleth.html#practice-in-sweden-1"><i class="fa fa-check"></i>Practice in Sweden</a></li>
 <li class="chapter" data-level="" data-path="02-choropleth.html"><a href="02-choropleth.html#more-resources-1"><i class="fa fa-check"></i>More Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html"><i class="fa fa-check"></i><b>3</b> Adding Resources</a>
@@ -195,6 +196,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#integrate-more-data-1"><i class="fa fa-check"></i><b>3.5</b> Integrate More Data</a></li>
 <li class="chapter" data-level="3.6" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#graduated-symbology"><i class="fa fa-check"></i><b>3.6</b> Graduated Symbology</a></li>
 <li class="chapter" data-level="3.7" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#style-final-map"><i class="fa fa-check"></i><b>3.7</b> Style Final Map</a></li>
+<li class="chapter" data-level="" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#practice-in-sweden-2"><i class="fa fa-check"></i>Practice in Sweden</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="04-newsvar.html"><a href="04-newsvar.html"><i class="fa fa-check"></i><b>4</b> Calculate Spatial Metrics</a>
 <ul>
@@ -206,7 +208,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="04-newsvar.html"><a href="04-newsvar.html#buffer-data"><i class="fa fa-check"></i><b>4.4</b> Buffer Data</a></li>
 <li class="chapter" data-level="4.5" data-path="04-newsvar.html"><a href="04-newsvar.html#count-buffers-by-area"><i class="fa fa-check"></i><b>4.5</b> Count buffers by area</a></li>
-<li class="chapter" data-level="4.6" data-path="04-newsvar.html"><a href="04-newsvar.html#integrate-explore"><i class="fa fa-check"></i><b>4.6</b> Integrate &amp; Explore</a></li>
+<li class="chapter" data-level="" data-path="04-newsvar.html"><a href="04-newsvar.html#practice-in-sweden-3"><i class="fa fa-check"></i>Practice in Sweden</a></li>
+<li class="chapter" data-level="" data-path="04-newsvar.html"><a href="04-newsvar.html#more-resources-2"><i class="fa fa-check"></i>More Resources</a></li>
 </ul></li>
 </ul>
 
@@ -232,9 +235,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="clean-attribute-data" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Clean Attribute Data<a href="02-choropleth.html#clean-attribute-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s consider COVID-19 cases by zip code in Chicago. We’ll upload and inspect a summary of cases from the <em>Chicago Data Portal</em> first:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="02-choropleth.html#cb43-1" tabindex="-1"></a>COVID <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv&quot;</span>)</span>
-<span id="cb43-2"><a href="02-choropleth.html#cb43-2" tabindex="-1"></a></span>
-<span id="cb43-3"><a href="02-choropleth.html#cb43-3" tabindex="-1"></a><span class="fu">head</span>(COVID)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="02-choropleth.html#cb41-1" tabindex="-1"></a>COVID <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv&quot;</span>)</span>
+<span id="cb41-2"><a href="02-choropleth.html#cb41-2" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="02-choropleth.html#cb41-3" tabindex="-1"></a><span class="fu">head</span>(COVID)</span></code></pre></div>
 <pre><code>##   ZIP.Code Week.Number Week.Start   Week.End Cases...Weekly Cases...Cumulative Case.Rate...Weekly
 ## 1    60603          39 09/20/2020 09/26/2020              0                 13                  0
 ## 2    60604          39 09/20/2020 09/26/2020              0                 31                  0
@@ -272,12 +275,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## 6 POINT (-87.625473 41.880112)</code></pre>
 <p>Each row corresponds to a zip code at a different week. This data thus exists as a “long” format, which doesn’t work for spatial analysis. We need to convert to “wide” format, or at the very least, ensure that each zip code corresponds to one row.</p>
 <p>To simplify, let’s identify the last week of the dataset, and then subset the data frame to only show that week. We will be interested in the cumulative case rate. Following is one way of doing this – can you think of another way? Try out different approaches of reshaping data to test your R and “tidy” skills.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="02-choropleth.html#cb45-1" tabindex="-1"></a><span class="do">## How many weeks are in our dataset?</span></span>
-<span id="cb45-2"><a href="02-choropleth.html#cb45-2" tabindex="-1"></a><span class="fu">range</span>(<span class="fu">as.numeric</span>(COVID<span class="sc">$</span>Week.Number))</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="02-choropleth.html#cb43-1" tabindex="-1"></a><span class="do">## How many weeks are in our dataset?</span></span>
+<span id="cb43-2"><a href="02-choropleth.html#cb43-2" tabindex="-1"></a><span class="fu">range</span>(<span class="fu">as.numeric</span>(COVID<span class="sc">$</span>Week.Number))</span></code></pre></div>
 <pre><code>## [1] 10 40</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="02-choropleth.html#cb47-1" tabindex="-1"></a><span class="do">## Subset &amp; inspect to week 39.</span></span>
-<span id="cb47-2"><a href="02-choropleth.html#cb47-2" tabindex="-1"></a>COVID<span class="fl">.39</span> <span class="ot">&lt;-</span> <span class="fu">subset</span>(COVID, COVID<span class="sc">$</span>Week.Number <span class="sc">==</span> <span class="st">&quot;39&quot;</span>)</span>
-<span id="cb47-3"><a href="02-choropleth.html#cb47-3" tabindex="-1"></a><span class="fu">head</span>(COVID<span class="fl">.39</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="02-choropleth.html#cb45-1" tabindex="-1"></a><span class="do">## Subset &amp; inspect to week 39.</span></span>
+<span id="cb45-2"><a href="02-choropleth.html#cb45-2" tabindex="-1"></a>COVID<span class="fl">.39</span> <span class="ot">&lt;-</span> <span class="fu">subset</span>(COVID, COVID<span class="sc">$</span>Week.Number <span class="sc">==</span> <span class="st">&quot;39&quot;</span>)</span>
+<span id="cb45-3"><a href="02-choropleth.html#cb45-3" tabindex="-1"></a><span class="fu">head</span>(COVID<span class="fl">.39</span>)</span></code></pre></div>
 <pre><code>##    ZIP.Code Week.Number Week.Start   Week.End Cases...Weekly Cases...Cumulative Case.Rate...Weekly
 ## 1     60603          39 09/20/2020 09/26/2020              0                 13                  0
 ## 2     60604          39 09/20/2020 09/26/2020              0                 31                  0
@@ -314,9 +317,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## 41 POINT (-87.623449 41.867824)
 ## 66   POINT (-87.63581 41.90455)</code></pre>
 <p>To clean our data a bit, we’ll just keep the zip code name, and cumulative case rate for the week of September 20th, 2020.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="02-choropleth.html#cb49-1" tabindex="-1"></a>COVID<span class="fl">.39</span>f <span class="ot">&lt;-</span> COVID<span class="fl">.39</span>[,<span class="fu">c</span>(<span class="st">&quot;ZIP.Code&quot;</span>, <span class="st">&quot;Case.Rate...Cumulative&quot;</span>)]</span>
-<span id="cb49-2"><a href="02-choropleth.html#cb49-2" tabindex="-1"></a></span>
-<span id="cb49-3"><a href="02-choropleth.html#cb49-3" tabindex="-1"></a><span class="fu">head</span>(COVID<span class="fl">.39</span>f)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="02-choropleth.html#cb47-1" tabindex="-1"></a>COVID<span class="fl">.39</span>f <span class="ot">&lt;-</span> COVID<span class="fl">.39</span>[,<span class="fu">c</span>(<span class="st">&quot;ZIP.Code&quot;</span>, <span class="st">&quot;Case.Rate...Cumulative&quot;</span>)]</span>
+<span id="cb47-2"><a href="02-choropleth.html#cb47-2" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="02-choropleth.html#cb47-3" tabindex="-1"></a><span class="fu">head</span>(COVID<span class="fl">.39</span>f)</span></code></pre></div>
 <pre><code>##    ZIP.Code Case.Rate...Cumulative
 ## 1     60603                 1107.3
 ## 2     60604                 3964.2
@@ -328,23 +331,22 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="merge-spatial-data" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Merge Spatial Data<a href="02-choropleth.html#merge-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Next, let’s merge this data to our zip code master spatial file. Reload if necessary:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="02-choropleth.html#cb51-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb51-2"><a href="02-choropleth.html#cb51-2" tabindex="-1"></a></span>
-<span id="cb51-3"><a href="02-choropleth.html#cb51-3" tabindex="-1"></a>Chi_Zips <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">&quot;data/geo_export_54bc15d8-5ef5-40e4-8f72-bb0c6dbac9a5.shp&quot;</span>)</span></code></pre></div>
-<pre><code>## Reading layer `geo_export_54bc15d8-5ef5-40e4-8f72-bb0c6dbac9a5&#39; from data source 
-##   `/Users/maryniakolak/Code/Spatial-Health-Workshop/data/geo_export_54bc15d8-5ef5-40e4-8f72-bb0c6dbac9a5.shp&#39; 
-##   using driver `ESRI Shapefile&#39;
-## Simple feature collection with 61 features and 4 fields
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="02-choropleth.html#cb49-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb49-2"><a href="02-choropleth.html#cb49-2" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="02-choropleth.html#cb49-3" tabindex="-1"></a>Chi_Zips <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">&quot;data/chicago_zips1.shp&quot;</span>)</span></code></pre></div>
+<pre><code>## Reading layer `chicago_zips1&#39; from data source 
+##   `/Users/maryniakolak/Code/Spatial-Health-Workshop/data/chicago_zips1.shp&#39; using driver `ESRI Shapefile&#39;
+## Simple feature collection with 59 features and 4 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
 ## Bounding box:  xmin: -87.94011 ymin: 41.64454 xmax: -87.52414 ymax: 42.02304
-## Geodetic CRS:  WGS84(DD)</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="02-choropleth.html#cb53-1" tabindex="-1"></a><span class="fu">head</span>(Chi_Zips)</span></code></pre></div>
+## Geodetic CRS:  +proj=longlat +ellps=WGS84 +no_defs</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="02-choropleth.html#cb51-1" tabindex="-1"></a><span class="fu">head</span>(Chi_Zips)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 4 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
 ## Bounding box:  xmin: -87.80649 ymin: 41.88747 xmax: -87.59852 ymax: 41.93228
-## Geodetic CRS:  WGS84(DD)
+## Geodetic CRS:  +proj=longlat +ellps=WGS84 +no_defs
 ##   objectid shape_area shape_len   zip                       geometry
 ## 1       33  106052287  42720.04 60647 MULTIPOLYGON (((-87.67762 4...
 ## 2       34  127476051  48103.78 60639 MULTIPOLYGON (((-87.72683 4...
@@ -353,14 +355,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## 5       37   99039621  47970.14 60651 MULTIPOLYGON (((-87.70656 4...
 ## 6       38   23506056  34689.35 60611 MULTIPOLYGON (((-87.61401 4...</code></pre>
 <p>Next, merge on zip code ID. The key in the Chi_Zips object is <code>zip</code>, whereas the key for the COVID data is <code>ZIP.code</code>. Always merge non-spatial <em>to</em> spatial data, not the other way around. Think of the spatial file as your master file that you will continue to add on to…</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="02-choropleth.html#cb55-1" tabindex="-1"></a>Chi_Zipsf <span class="ot">&lt;-</span> <span class="fu">merge</span>(Chi_Zips, COVID<span class="fl">.39</span>f, <span class="at">by.x =</span> <span class="st">&quot;zip&quot;</span>, <span class="at">by.y =</span> <span class="st">&quot;ZIP.Code&quot;</span>, <span class="at">all =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb55-2"><a href="02-choropleth.html#cb55-2" tabindex="-1"></a></span>
-<span id="cb55-3"><a href="02-choropleth.html#cb55-3" tabindex="-1"></a><span class="fu">head</span>(Chi_Zipsf)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="02-choropleth.html#cb53-1" tabindex="-1"></a>Chi_Zipsf <span class="ot">&lt;-</span> <span class="fu">merge</span>(Chi_Zips, COVID<span class="fl">.39</span>f, <span class="at">by.x =</span> <span class="st">&quot;zip&quot;</span>, <span class="at">by.y =</span> <span class="st">&quot;ZIP.Code&quot;</span>, <span class="at">all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb53-2"><a href="02-choropleth.html#cb53-2" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="02-choropleth.html#cb53-3" tabindex="-1"></a><span class="fu">head</span>(Chi_Zipsf)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 5 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
 ## Bounding box:  xmin: -87.63999 ymin: 41.85317 xmax: -87.60246 ymax: 41.88913
-## Geodetic CRS:  WGS84(DD)
+## Geodetic CRS:  +proj=longlat +ellps=WGS84 +no_defs
 ##     zip objectid shape_area shape_len Case.Rate...Cumulative                       geometry
 ## 1 60601       27    9166246  19804.58                 1451.4 MULTIPOLYGON (((-87.62271 4...
 ## 2 60602       26    4847125  14448.17                 1688.1 MULTIPOLYGON (((-87.60997 4...
@@ -373,53 +375,53 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.3</span> Quantile Maps<a href="02-choropleth.html#quantile-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Starting with a “classic epi” approach, let’s look at case rates as quantiles. We use the <code>tmap</code> library, and update the choropleth data classification using the <code>style</code> parameter. We use the Blue-Purple palette, or <code>BuPu</code>, from Colorbrewer.</p>
 <p><strong>Colorbrewer Tip:</strong> To display all Colorbrewer palette options, load the <code>RColorBrewer</code> library and run <code>display.brewer.all()</code> – or just Google “R Colorbrewer palettes.”</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="02-choropleth.html#cb57-1" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb57-2"><a href="02-choropleth.html#cb57-2" tabindex="-1"></a></span>
-<span id="cb57-3"><a href="02-choropleth.html#cb57-3" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
-<span id="cb57-4"><a href="02-choropleth.html#cb57-4" tabindex="-1"></a></span>
-<span id="cb57-5"><a href="02-choropleth.html#cb57-5" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf ) <span class="sc">+</span></span>
-<span id="cb57-6"><a href="02-choropleth.html#cb57-6" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
-<span id="cb57-7"><a href="02-choropleth.html#cb57-7" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;quantile&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
-<span id="cb57-8"><a href="02-choropleth.html#cb57-8" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="02-choropleth.html#cb55-1" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb55-2"><a href="02-choropleth.html#cb55-2" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="02-choropleth.html#cb55-3" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb55-4"><a href="02-choropleth.html#cb55-4" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="02-choropleth.html#cb55-5" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf ) <span class="sc">+</span></span>
+<span id="cb55-6"><a href="02-choropleth.html#cb55-6" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
+<span id="cb55-7"><a href="02-choropleth.html#cb55-7" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;quantile&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
+<span id="cb55-8"><a href="02-choropleth.html#cb55-8" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>) </span></code></pre></div>
 <p><img src="Spatial-R-for-Healthy-Places_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>Let’s try tertiles:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="02-choropleth.html#cb58-1" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf ) <span class="sc">+</span></span>
-<span id="cb58-2"><a href="02-choropleth.html#cb58-2" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
-<span id="cb58-3"><a href="02-choropleth.html#cb58-3" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;quantile&quot;</span>, <span class="at">n=</span><span class="dv">3</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
-<span id="cb58-4"><a href="02-choropleth.html#cb58-4" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="02-choropleth.html#cb56-1" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf ) <span class="sc">+</span></span>
+<span id="cb56-2"><a href="02-choropleth.html#cb56-2" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
+<span id="cb56-3"><a href="02-choropleth.html#cb56-3" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;quantile&quot;</span>, <span class="at">n=</span><span class="dv">3</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
+<span id="cb56-4"><a href="02-choropleth.html#cb56-4" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>) </span></code></pre></div>
 <p><img src="Spatial-R-for-Healthy-Places_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 </div>
 <div id="standard-deviation-maps" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Standard Deviation Maps<a href="02-choropleth.html#standard-deviation-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>While quantiles are a nice start, let’s classify using a standard deviation map. Standard deviation is a statistical technique type of map based on how much the data differs from the mean.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="02-choropleth.html#cb59-1" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf ) <span class="sc">+</span></span>
-<span id="cb59-2"><a href="02-choropleth.html#cb59-2" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
-<span id="cb59-3"><a href="02-choropleth.html#cb59-3" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;sd&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
-<span id="cb59-4"><a href="02-choropleth.html#cb59-4" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="02-choropleth.html#cb57-1" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf ) <span class="sc">+</span></span>
+<span id="cb57-2"><a href="02-choropleth.html#cb57-2" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
+<span id="cb57-3"><a href="02-choropleth.html#cb57-3" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;sd&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
+<span id="cb57-4"><a href="02-choropleth.html#cb57-4" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>) </span></code></pre></div>
 <p><img src="Spatial-R-for-Healthy-Places_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 </div>
 <div id="jenks-maps" class="section level2 hasAnchor" number="2.5">
 <h2><span class="header-section-number">2.5</span> Jenks Maps<a href="02-choropleth.html#jenks-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Another approach of data classification is natural breaks, or jenks. This approach looks for “natural breaks” in the data using a univariate clustering algorithm.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="02-choropleth.html#cb60-1" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf ) <span class="sc">+</span></span>
-<span id="cb60-2"><a href="02-choropleth.html#cb60-2" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
-<span id="cb60-3"><a href="02-choropleth.html#cb60-3" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
-<span id="cb60-4"><a href="02-choropleth.html#cb60-4" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="02-choropleth.html#cb58-1" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf ) <span class="sc">+</span></span>
+<span id="cb58-2"><a href="02-choropleth.html#cb58-2" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
+<span id="cb58-3"><a href="02-choropleth.html#cb58-3" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
+<span id="cb58-4"><a href="02-choropleth.html#cb58-4" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>) </span></code></pre></div>
 <p><img src="Spatial-R-for-Healthy-Places_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <p>The first bin doesn’t seem very intuitive. Let’s try 4 bins instead of 5 by changing the <code>n</code> parameter. In this version, we’ll also had a histogram and scale bar, and move the legend outside the frame to make it easier to view.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="02-choropleth.html#cb61-1" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span></span>
-<span id="cb61-2"><a href="02-choropleth.html#cb61-2" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
-<span id="cb61-3"><a href="02-choropleth.html#cb61-3" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
-<span id="cb61-4"><a href="02-choropleth.html#cb61-4" tabindex="-1"></a>              <span class="at">legend.hist=</span>T, <span class="at">n=</span><span class="dv">4</span>,</span>
-<span id="cb61-5"><a href="02-choropleth.html#cb61-5" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>, ) <span class="sc">+</span> </span>
-<span id="cb61-6"><a href="02-choropleth.html#cb61-6" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="st">&quot;left&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="02-choropleth.html#cb59-1" tabindex="-1"></a><span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span></span>
+<span id="cb59-2"><a href="02-choropleth.html#cb59-2" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
+<span id="cb59-3"><a href="02-choropleth.html#cb59-3" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>,</span>
+<span id="cb59-4"><a href="02-choropleth.html#cb59-4" tabindex="-1"></a>              <span class="at">legend.hist=</span>T, <span class="at">n=</span><span class="dv">4</span>,</span>
+<span id="cb59-5"><a href="02-choropleth.html#cb59-5" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;COVID Case Rate&quot;</span>, ) <span class="sc">+</span> </span>
+<span id="cb59-6"><a href="02-choropleth.html#cb59-6" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="st">&quot;left&quot;</span>) </span></code></pre></div>
 <p><img src="Spatial-R-for-Healthy-Places_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 </div>
 <div id="integrate-more-data" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> Integrate More Data<a href="02-choropleth.html#integrate-more-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To explore potential disparities in COVID health outcomes, let’s bring in pre-cleaned demographic, racial, and ethnic data from the <a href="https://geodacenter.github.io/opioid-policy-scan/">Opioid Environment Policy Scan database</a>. This data is orginally sourced from the American Community Survey 2018 5-year estimate, which you could also pull using the <code>tidycensus</code>.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="02-choropleth.html#cb62-1" tabindex="-1"></a>CensusVar <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/DS01_Z.csv&quot;</span>)</span>
-<span id="cb62-2"><a href="02-choropleth.html#cb62-2" tabindex="-1"></a><span class="fu">head</span>(CensusVar)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="02-choropleth.html#cb60-1" tabindex="-1"></a>CensusVar <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/DS01_Z.csv&quot;</span>)</span>
+<span id="cb60-2"><a href="02-choropleth.html#cb60-2" tabindex="-1"></a><span class="fu">head</span>(CensusVar)</span></code></pre></div>
 <pre><code>##    ZCTA year totPopE whiteP blackP amIndP asianP pacIsP otherP  hispP  noHSP age0_4 age5_14 age15_19
 ## 1 35004 2018   11762  84.39  13.09   0.00   0.94   0.00   1.57   0.94   5.52    787    1950      457
 ## 2 35005 2018    7528  55.22  42.44   0.64   0.00   0.15   1.55   1.37  17.48    511    1055      455
@@ -442,39 +444,39 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## 5  19.6
 ## 6   0.0</code></pre>
 <p>Merge to our master Zip Code dataset. There are many more zip codes than we have in our Chicago dataset, so we only keep the zip codes in the main dataset, Chi_Zipf. In this case, let’s test the merge to see if we retain 61 observations.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="02-choropleth.html#cb64-1" tabindex="-1"></a>Chi_Zips_test <span class="ot">&lt;-</span> <span class="fu">merge</span>(Chi_Zipsf, CensusVar, <span class="at">by.x =</span> <span class="st">&quot;zip&quot;</span>, <span class="at">by.y =</span> <span class="st">&quot;ZCTA&quot;</span>, <span class="at">all.x=</span><span class="cn">TRUE</span>)</span>
-<span id="cb64-2"><a href="02-choropleth.html#cb64-2" tabindex="-1"></a></span>
-<span id="cb64-3"><a href="02-choropleth.html#cb64-3" tabindex="-1"></a><span class="fu">dim</span>(Chi_Zips_test)</span></code></pre></div>
-<pre><code>## [1] 62 32</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="02-choropleth.html#cb62-1" tabindex="-1"></a>Chi_Zips_test <span class="ot">&lt;-</span> <span class="fu">merge</span>(Chi_Zipsf, CensusVar, <span class="at">by.x =</span> <span class="st">&quot;zip&quot;</span>, <span class="at">by.y =</span> <span class="st">&quot;ZCTA&quot;</span>, <span class="at">all.x=</span><span class="cn">TRUE</span>)</span>
+<span id="cb62-2"><a href="02-choropleth.html#cb62-2" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="02-choropleth.html#cb62-3" tabindex="-1"></a><span class="fu">dim</span>(Chi_Zips_test)</span></code></pre></div>
+<pre><code>## [1] 60 32</code></pre>
 </div>
 <div id="thematic-map-panel" class="section level2 hasAnchor" number="2.7">
 <h2><span class="header-section-number">2.7</span> Thematic Map Panel<a href="02-choropleth.html#thematic-map-panel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To facilitate data discovery, we likely want to explore multiple maps at once. Here we’ll generate maps for multiple variables, and plot them as a map panel.</p>
 <p>Can you think of more efficient ways to run this code? There are also other <code>tmap</code> tricks to optimize this further, so enjoy your journey!</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="02-choropleth.html#cb66-1" tabindex="-1"></a>Chi_Zipsf <span class="ot">&lt;-</span> Chi_Zips_test</span>
-<span id="cb66-2"><a href="02-choropleth.html#cb66-2" tabindex="-1"></a></span>
-<span id="cb66-3"><a href="02-choropleth.html#cb66-3" tabindex="-1"></a> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;ovr65P&quot;</span>, </span>
-<span id="cb66-4"><a href="02-choropleth.html#cb66-4" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="02-choropleth.html#cb64-1" tabindex="-1"></a>Chi_Zipsf <span class="ot">&lt;-</span> Chi_Zips_test</span>
+<span id="cb64-2"><a href="02-choropleth.html#cb64-2" tabindex="-1"></a></span>
+<span id="cb64-3"><a href="02-choropleth.html#cb64-3" tabindex="-1"></a> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;ovr65P&quot;</span>, </span>
+<span id="cb64-4"><a href="02-choropleth.html#cb64-4" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>)</span></code></pre></div>
 <p><img src="Spatial-R-for-Healthy-Places_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="02-choropleth.html#cb67-1" tabindex="-1"></a>COVID <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
-<span id="cb67-2"><a href="02-choropleth.html#cb67-2" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">n=</span><span class="dv">4</span>, <span class="at">title =</span> <span class="st">&quot;COVID Rt&quot;</span>) </span>
-<span id="cb67-3"><a href="02-choropleth.html#cb67-3" tabindex="-1"></a></span>
-<span id="cb67-4"><a href="02-choropleth.html#cb67-4" tabindex="-1"></a>Senior <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;ovr65P&quot;</span>, </span>
-<span id="cb67-5"><a href="02-choropleth.html#cb67-5" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>) </span>
-<span id="cb67-6"><a href="02-choropleth.html#cb67-6" tabindex="-1"></a></span>
-<span id="cb67-7"><a href="02-choropleth.html#cb67-7" tabindex="-1"></a>NoHS <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;noHSP&quot;</span>, </span>
-<span id="cb67-8"><a href="02-choropleth.html#cb67-8" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>)</span>
-<span id="cb67-9"><a href="02-choropleth.html#cb67-9" tabindex="-1"></a></span>
-<span id="cb67-10"><a href="02-choropleth.html#cb67-10" tabindex="-1"></a>BlkP <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;blackP&quot;</span>, </span>
-<span id="cb67-11"><a href="02-choropleth.html#cb67-11" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>) </span>
-<span id="cb67-12"><a href="02-choropleth.html#cb67-12" tabindex="-1"></a></span>
-<span id="cb67-13"><a href="02-choropleth.html#cb67-13" tabindex="-1"></a>Latnx <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;hispP&quot;</span>, </span>
-<span id="cb67-14"><a href="02-choropleth.html#cb67-14" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>, <span class="at">title=</span><span class="st">&quot;hispP&quot;</span>) </span>
-<span id="cb67-15"><a href="02-choropleth.html#cb67-15" tabindex="-1"></a></span>
-<span id="cb67-16"><a href="02-choropleth.html#cb67-16" tabindex="-1"></a>WhiP <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;whiteP&quot;</span>, </span>
-<span id="cb67-17"><a href="02-choropleth.html#cb67-17" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>) </span>
-<span id="cb67-18"><a href="02-choropleth.html#cb67-18" tabindex="-1"></a></span>
-<span id="cb67-19"><a href="02-choropleth.html#cb67-19" tabindex="-1"></a><span class="fu">tmap_arrange</span>(COVID, Senior, NoHS, BlkP, Latnx, WhiP)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="02-choropleth.html#cb65-1" tabindex="-1"></a>COVID <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;Case.Rate...Cumulative&quot;</span>, </span>
+<span id="cb65-2"><a href="02-choropleth.html#cb65-2" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;Reds&quot;</span>, <span class="at">n=</span><span class="dv">4</span>, <span class="at">title =</span> <span class="st">&quot;COVID Rt&quot;</span>) </span>
+<span id="cb65-3"><a href="02-choropleth.html#cb65-3" tabindex="-1"></a></span>
+<span id="cb65-4"><a href="02-choropleth.html#cb65-4" tabindex="-1"></a>Senior <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;ovr65P&quot;</span>, </span>
+<span id="cb65-5"><a href="02-choropleth.html#cb65-5" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>) </span>
+<span id="cb65-6"><a href="02-choropleth.html#cb65-6" tabindex="-1"></a></span>
+<span id="cb65-7"><a href="02-choropleth.html#cb65-7" tabindex="-1"></a>NoHS <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;noHSP&quot;</span>, </span>
+<span id="cb65-8"><a href="02-choropleth.html#cb65-8" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>)</span>
+<span id="cb65-9"><a href="02-choropleth.html#cb65-9" tabindex="-1"></a></span>
+<span id="cb65-10"><a href="02-choropleth.html#cb65-10" tabindex="-1"></a>BlkP <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;blackP&quot;</span>, </span>
+<span id="cb65-11"><a href="02-choropleth.html#cb65-11" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>) </span>
+<span id="cb65-12"><a href="02-choropleth.html#cb65-12" tabindex="-1"></a></span>
+<span id="cb65-13"><a href="02-choropleth.html#cb65-13" tabindex="-1"></a>Latnx <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;hispP&quot;</span>, </span>
+<span id="cb65-14"><a href="02-choropleth.html#cb65-14" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>, <span class="at">title=</span><span class="st">&quot;hispP&quot;</span>) </span>
+<span id="cb65-15"><a href="02-choropleth.html#cb65-15" tabindex="-1"></a></span>
+<span id="cb65-16"><a href="02-choropleth.html#cb65-16" tabindex="-1"></a>WhiP <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(Chi_Zipsf) <span class="sc">+</span> <span class="fu">tm_fill</span>(<span class="st">&quot;whiteP&quot;</span>, </span>
+<span id="cb65-17"><a href="02-choropleth.html#cb65-17" tabindex="-1"></a>              <span class="at">style=</span><span class="st">&quot;jenks&quot;</span>, <span class="at">pal=</span><span class="st">&quot;BuPu&quot;</span>, <span class="at">n=</span><span class="dv">4</span>) </span>
+<span id="cb65-18"><a href="02-choropleth.html#cb65-18" tabindex="-1"></a></span>
+<span id="cb65-19"><a href="02-choropleth.html#cb65-19" tabindex="-1"></a><span class="fu">tmap_arrange</span>(COVID, Senior, NoHS, BlkP, Latnx, WhiP)</span></code></pre></div>
 <p><img src="Spatial-R-for-Healthy-Places_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <p>From the results, we see that cumulative COVID outcomes for one week in September 2020 seemed to have some geographic correlation with the Latinx/Hispanic community in Chicago. At the same time, low high school diploma rates are also concentrated in these areas, and there is some intersection with other variables considered. What are additional variables you could bring in to refine your approach? Perhaps percentage of essential workers; a different age group; internet access? What about linking in health outcomes like Asthma, Hypertension, and more at a similar scale?</p>
 <p>In modern spatial epidemiology, associations must never be taken at face value. For example, we know that it is not “race” but “racism” that drives multiple health disparities – simply looking at a specific racial/ethnic group is not enough. Thus exploring multiple variables and nurturing a curiosity to understand these complex intersections will support knowledge discovery.</p>
@@ -482,9 +484,20 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="data" class="section level2 hasAnchor" number="2.8">
 <h2><span class="header-section-number">2.8</span> Data<a href="02-choropleth.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We’re done! Well… not so fast. Let’s save the data so we don’t have to run the codebook again to access the data. Here, we’ll save as a <code>geojson</code> file. This spatial format is more forgiving with long column names, which is a long-standing challenge with shapefiles. But sometimes it can be written oddly, so double-check the dimensions when reading in later.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="02-choropleth.html#cb68-1" tabindex="-1"></a><span class="co">#st_write(Chi_Zipsf, &quot;data/ChiZipMaster.geojson&quot;, driver = &quot;GeoJSON&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="02-choropleth.html#cb66-1" tabindex="-1"></a><span class="co">#Chi_Zipsf_recast &lt;- st_cast(Chi_Zipsf, &quot;MULTIPOLYGON&quot;)</span></span>
+<span id="cb66-2"><a href="02-choropleth.html#cb66-2" tabindex="-1"></a></span>
+<span id="cb66-3"><a href="02-choropleth.html#cb66-3" tabindex="-1"></a><span class="co">#st_write(Chi_Zipsf_recast, &quot;data/ChiZipMaster.geojson&quot;, driver = &quot;GeoJSON&quot;)</span></span></code></pre></div>
 <p>We could also just the data as a <code>CSV</code> file which may be easier for future linking. For this, we use the <code>st_drop_geometry()</code> function to remove the geometry data, so we’re just left with the attributes.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="02-choropleth.html#cb69-1" tabindex="-1"></a><span class="co">#write.csv(st_drop_geometry(Chi_Zipsf), &quot;data/ChiZipMaster.csv&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="02-choropleth.html#cb67-1" tabindex="-1"></a><span class="co">#write.csv(st_drop_geometry(Chi_Zipsf), &quot;data/ChiZipMaster.csv&quot;)</span></span></code></pre></div>
+</div>
+<div id="practice-in-sweden-1" class="section level2 unnumbered hasAnchor">
+<h2>Practice in Sweden<a href="02-choropleth.html#practice-in-sweden-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The data folder has a dataset entitled <code>sweden_income_2022.csv</code>. Bring it into the workspace. Then:</p>
+<ol style="list-style-type: decimal">
+<li>Bring it into the workspace, and inspect. Prepare for a merge.</li>
+<li>Merge the income-level data to the DeSo dataset you worked with in the prior practice. Inspect.</li>
+<li>Generate a series of choropleth maps of <strong>median income</strong> using different styles. Select the best, and explain why you identified it as such.</li>
+</ol>
 </div>
 <div id="more-resources-1" class="section level2 unnumbered hasAnchor">
 <h2>More Resources<a href="02-choropleth.html#more-resources-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
