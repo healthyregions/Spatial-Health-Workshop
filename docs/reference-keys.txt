@@ -40,3 +40,7 @@ count-per-area
 buffer-data
 count-buffers-by-area
 integrate-explore
+open-data
+inspect-data
+crs-check
+practice-in-sweden
