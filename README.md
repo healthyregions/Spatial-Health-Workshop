@@ -6,6 +6,9 @@ A workshop to learn an introduction to GIS & Spatial Analysis for health.
 - [Data for Workshop](https://github.com/Makosak/Intro2RSpatialMed/tree/main/data)
 - [Posit Cloud Environment](https://posit.cloud/content/6095690)
 
+Sweden 2025 Workshop Details
+- [Slide Deck](https://docs.google.com/presentation/d/1FDbxNdHZ4D75wRWKchArLYSGatzgEsDDJr2S2EzCfHs/edit?usp=sharing)
+
 SER 2023 Workshop Details
 
 - [Sign In](https://docs.google.com/forms/d/1eUL4kHaujNVgLnlmSA9zRkSVLp-s1OPoAIls0_gDDEc/edit)
