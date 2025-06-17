@@ -5,24 +5,24 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Intro to Spatial Analysis in R for Health</title>
-  <meta name="description" content="This was developed by the Healthy Regions - Policies Lab." />
+  <meta name="description" content="This was developed by the Healthy Regions and Policies Lab." />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Intro to Spatial Analysis in R for Health" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="This was developed by the Healthy Regions - Policies Lab." />
+  <meta property="og:description" content="This was developed by the Healthy Regions and Policies Lab." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Intro to Spatial Analysis in R for Health" />
   
-  <meta name="twitter:description" content="This was developed by the Healthy Regions - Policies Lab." />
+  <meta name="twitter:description" content="This was developed by the Healthy Regions and Policies Lab." />
   
 
 
 
-<meta name="date" content="2025-06-17" />
+<meta name="date" content="2025-06-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,21 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
+<script src="libs/Leaflet.glify-3.2.0/addGlifyPoints.js"></script>
+<script src="libs/Leaflet.glify-3.2.0/addGlifyPolygons.js"></script>
+<script src="libs/Leaflet.glify-3.2.0/addGlifyPolylines.js"></script>
+<script src="libs/Leaflet.glify-3.2.0/glify-browser.js"></script>
 
 
 <style type="text/css">
@@ -171,38 +186,27 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="02-choropleth.html"><a href="02-choropleth.html#data"><i class="fa fa-check"></i><b>2.8</b> Data</a></li>
 <li class="chapter" data-level="" data-path="02-choropleth.html"><a href="02-choropleth.html#more-resources-1"><i class="fa fa-check"></i>More Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="05-LISA.html"><a href="05-LISA.html"><i class="fa fa-check"></i><b>3</b> Spatial Cluster Detection</a>
+<li class="chapter" data-level="3" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html"><i class="fa fa-check"></i><b>3</b> Adding Resources</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="05-LISA.html"><a href="05-LISA.html#identify-pattern"><i class="fa fa-check"></i><b>3.1</b> Identify Pattern</a></li>
-<li class="chapter" data-level="3.2" data-path="05-LISA.html"><a href="05-LISA.html#load-rgeoda"><i class="fa fa-check"></i><b>3.2</b> Load rGeoda</a></li>
-<li class="chapter" data-level="3.3" data-path="05-LISA.html"><a href="05-LISA.html#define-w"><i class="fa fa-check"></i><b>3.3</b> Define W</a></li>
-<li class="chapter" data-level="3.4" data-path="05-LISA.html"><a href="05-LISA.html#calculate-lisa"><i class="fa fa-check"></i><b>3.4</b> Calculate LISA</a></li>
-<li class="chapter" data-level="3.5" data-path="05-LISA.html"><a href="05-LISA.html#map-the-lisa"><i class="fa fa-check"></i><b>3.5</b> Map the LISA</a></li>
-<li class="chapter" data-level="3.6" data-path="05-LISA.html"><a href="05-LISA.html#certainty-check"><i class="fa fa-check"></i><b>3.6</b> Certainty Check</a></li>
-<li class="chapter" data-level="3.7" data-path="05-LISA.html"><a href="05-LISA.html#putting-it-together"><i class="fa fa-check"></i><b>3.7</b> Putting it together</a></li>
-<li class="chapter" data-level="" data-path="05-LISA.html"><a href="05-LISA.html#more-resources-2"><i class="fa fa-check"></i>More Resources</a></li>
+<li class="chapter" data-level="3.1" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#geocode"><i class="fa fa-check"></i><b>3.1</b> Geocode</a></li>
+<li class="chapter" data-level="3.2" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>3.2</b> Convert to Spatial Data</a></li>
+<li class="chapter" data-level="3.3" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#basic-map-of-points"><i class="fa fa-check"></i><b>3.3</b> Basic Map of Points</a></li>
+<li class="chapter" data-level="3.4" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#overlay-points-style"><i class="fa fa-check"></i><b>3.4</b> Overlay Points &amp; Style</a></li>
+<li class="chapter" data-level="3.5" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#integrate-more-data-1"><i class="fa fa-check"></i><b>3.5</b> Integrate More Data</a></li>
+<li class="chapter" data-level="3.6" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#graduated-symbology"><i class="fa fa-check"></i><b>3.6</b> Graduated Symbology</a></li>
+<li class="chapter" data-level="3.7" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#style-final-map"><i class="fa fa-check"></i><b>3.7</b> Style Final Map</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html"><i class="fa fa-check"></i><b>4</b> Adding Resources</a>
+<li class="chapter" data-level="4" data-path="04-newsvar.html"><a href="04-newsvar.html"><i class="fa fa-check"></i><b>4</b> Calculate Spatial Metrics</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#geocode"><i class="fa fa-check"></i><b>4.1</b> Geocode</a></li>
-<li class="chapter" data-level="4.2" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#convert-to-spatial-data"><i class="fa fa-check"></i><b>4.2</b> Convert to Spatial Data</a></li>
-<li class="chapter" data-level="4.3" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#basic-map-of-points"><i class="fa fa-check"></i><b>4.3</b> Basic Map of Points</a></li>
-<li class="chapter" data-level="4.4" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#overlay-points-style"><i class="fa fa-check"></i><b>4.4</b> Overlay Points &amp; Style</a></li>
-<li class="chapter" data-level="4.5" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#integrate-more-data-1"><i class="fa fa-check"></i><b>4.5</b> Integrate More Data</a></li>
-<li class="chapter" data-level="4.6" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#graduated-symbology"><i class="fa fa-check"></i><b>4.6</b> Graduated Symbology</a></li>
-<li class="chapter" data-level="4.7" data-path="03-overlaypoints.html"><a href="03-overlaypoints.html#style-final-map"><i class="fa fa-check"></i><b>4.7</b> Style Final Map</a></li>
+<li class="chapter" data-level="4.1" data-path="04-newsvar.html"><a href="04-newsvar.html#load-spatial-data-1"><i class="fa fa-check"></i><b>4.1</b> Load Spatial Data</a></li>
+<li class="chapter" data-level="4.2" data-path="04-newsvar.html"><a href="04-newsvar.html#transform-projections"><i class="fa fa-check"></i><b>4.2</b> Transform Projections</a></li>
+<li class="chapter" data-level="4.3" data-path="04-newsvar.html"><a href="04-newsvar.html#count-resources-by-area"><i class="fa fa-check"></i><b>4.3</b> Count resources by area</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="04-newsvar.html"><a href="04-newsvar.html#count-per-area"><i class="fa fa-check"></i><b>4.3.1</b> Count # per Area</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="04-newsvar.html"><a href="04-newsvar.html"><i class="fa fa-check"></i><b>5</b> Calculate Spatial Metrics</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="04-newsvar.html"><a href="04-newsvar.html#load-spatial-data-1"><i class="fa fa-check"></i><b>5.1</b> Load Spatial Data</a></li>
-<li class="chapter" data-level="5.2" data-path="04-newsvar.html"><a href="04-newsvar.html#transform-projections"><i class="fa fa-check"></i><b>5.2</b> Transform Projections</a></li>
-<li class="chapter" data-level="5.3" data-path="04-newsvar.html"><a href="04-newsvar.html#count-resources-by-area"><i class="fa fa-check"></i><b>5.3</b> Count resources by area</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="04-newsvar.html"><a href="04-newsvar.html#count-per-area"><i class="fa fa-check"></i><b>5.3.1</b> Count # per Area</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="04-newsvar.html"><a href="04-newsvar.html#buffer-data"><i class="fa fa-check"></i><b>5.4</b> Buffer Data</a></li>
-<li class="chapter" data-level="5.5" data-path="04-newsvar.html"><a href="04-newsvar.html#count-buffers-by-area"><i class="fa fa-check"></i><b>5.5</b> Count buffers by area</a></li>
-<li class="chapter" data-level="5.6" data-path="04-newsvar.html"><a href="04-newsvar.html#integrate-explore"><i class="fa fa-check"></i><b>5.6</b> Integrate &amp; Explore</a></li>
+<li class="chapter" data-level="4.4" data-path="04-newsvar.html"><a href="04-newsvar.html#buffer-data"><i class="fa fa-check"></i><b>4.4</b> Buffer Data</a></li>
+<li class="chapter" data-level="4.5" data-path="04-newsvar.html"><a href="04-newsvar.html#count-buffers-by-area"><i class="fa fa-check"></i><b>4.5</b> Count buffers by area</a></li>
+<li class="chapter" data-level="4.6" data-path="04-newsvar.html"><a href="04-newsvar.html#integrate-explore"><i class="fa fa-check"></i><b>4.6</b> Integrate &amp; Explore</a></li>
 </ul></li>
 </ul>
 
@@ -223,7 +227,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">Intro to Spatial Analysis in R for Health</h1>
-<p class="date"><em>2025-06-17</em></p>
+<p class="date"><em>2025-06-18</em></p>
 </div>
 <div id="background" class="section level2 unnumbered hasAnchor">
 <h2>Background<a href="index.html#background" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -237,21 +241,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h3>Access Resources<a href="index.html#access-resources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are multiple resources linked with this workbook. Access the following as needed:</p>
 <ul>
-<li>Data for the workshop: <a href="">Zip File</a></li>
+<li>Data for the workshop: <a href="https://github.com/healthyregions/Spatial-Health-Workshop/blob/main/data/Data-2025.zip">Zip File</a></li>
 <li><a href="https://github.com/healthyregions/Spatial-Health-Workshop">Github repository</a> of the workshop</li>
 <li>Short link to this workbook: <a href="go.illinois.edu/RSpatial">go.illinois.edu/RSpatial</a></li>
 <li>Slide deck for latest workshop: <a href="https://docs.google.com/presentation/d/1FDbxNdHZ4D75wRWKchArLYSGatzgEsDDJr2S2EzCfHs/edit?usp=sharing">Sweden 2025</a></li>
-</ul>
-<p>SER 2023 Workshop Details</p>
-<ul>
-<li><a href="https://docs.google.com/forms/d/1eUL4kHaujNVgLnlmSA9zRkSVLp-s1OPoAIls0_gDDEc/edit">Sign In</a></li>
-<li><a href="https://docs.google.com/presentation/d/1Og-RmBloA2_thTKQIP9dAfVMBf_tS39U1V6ZlbVLWrY/edit#slide=id.p">Slide Deck</a></li>
-</ul>
-<p>SER 2022 Workshop Details</p>
-<ul>
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf_TC0sxXDriCbnRtol6exTMzRZTugSMoctoz1uu0cijnktAQ/viewform">Sign In</a></li>
-<li><a href="https://docs.google.com/presentation/d/1c1RirI9Jk_Pk99n2nuCIFZYoeBRzfHat6nR6-ZQGhrI/edit?usp=sharing">Slide Deck</a></li>
-<li><a href="https://cme.uchicago.edu/SpatialAnalysis22">Claim CME credits</a>)</li>
 </ul>
 </div>
 <div id="environment-setup" class="section level3 unnumbered hasAnchor">
@@ -259,7 +252,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>A basic understanding of R is assumed. This workshop requires several packages, which can be installed from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>, <span class="st">&quot;tmap&quot;</span>, <span class="st">&quot;tidygeocoder&quot;</span>, <span class="st">&quot;rgeoda&quot;</span>)</span></code></pre></div>
 <p>For Mac users, check out <a href="https://github.com/r-spatial/sf" class="uri">https://github.com/r-spatial/sf</a> for additional tips if you run into errors when installing the <strong>sf</strong> package. Using homebrew to install <strong>gdal</strong> usually fixes any remaining issues.</p>
-<p>Be sure to download the <a href="">data</a> in the working directory of your R environment. In the examples, data reside in a folder called “data” of the main working directory.</p>
+<p>Be sure to download the <a href="https://github.com/healthyregions/Spatial-Health-Workshop/blob/main/data/Data-2025.zip">data</a> in the working directory of your R environment. In the examples, data reside in a folder called “data” of the main working directory.</p>
 
 </div>
 </div>

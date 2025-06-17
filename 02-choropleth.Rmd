@@ -51,8 +51,7 @@ head(Chi_Zips)
 Next, merge on zip code ID. The key in the Chi_Zips object is `zip`, whereas the key for the COVID data is `ZIP.code`. Always merge non-spatial *to* spatial data, not the other way around. Think of the spatial file as your master file that you will continue to add on to...
 
 ```{r}
-#Chi_Zipsf <- merge(Chi_Zips, COVID.39f, by.x = "zip", by.y = "ZIP.Code", all = TRUE)
-Chi_Zipsf <- merge(Chi_Zips, COVID.39f, by.x = "zip", by.y = "ZIP.Code")
+Chi_Zipsf <- merge(Chi_Zips, COVID.39f, by.x = "zip", by.y = "ZIP.Code", all = TRUE)
 
 head(Chi_Zipsf)
 ```
@@ -109,14 +108,13 @@ tm_shape(Chi_Zipsf ) +
 
 The first bin doesn't seem very intuitive. Let's try 4 bins instead of 5 by changing the `n` parameter. In this version, we'll also had a histogram and scale bar, and move the legend outside the frame to make it easier to view.
 
-```{r message=FALSE}
+```{r, message=FALSE}
 tm_shape(Chi_Zipsf) +
   tm_polygons("Case.Rate...Cumulative", 
               style="jenks", pal="BuPu",
               legend.hist=T, n=4,
               title = "COVID Case Rate", ) + 
-  tm_scale_bar(position = "left") + 
-  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+  tm_scale_bar(position = "left") 
 
 ```
 
@@ -129,13 +127,14 @@ CensusVar <- read.csv("data/DS01_Z.csv")
 head(CensusVar)
 ```
 
-Merge to our master Zip Code dataset.
+Merge to our master Zip Code dataset. There are many more zip codes than we have in our Chicago dataset, so we only keep the zip codes in the main dataset, Chi_Zipf. In this case, let's test the merge to see if we retain 61 observations.
 
 ```{r}
-Chi_Zipsf <- merge(Chi_Zipsf, CensusVar, by.x = "zip", by.y = "ZCTA")
+Chi_Zips_test <- merge(Chi_Zipsf, CensusVar, by.x = "zip", by.y = "ZCTA", all.x=TRUE)
 
-head(Chi_Zipsf)
+dim(Chi_Zips_test)
 ```
+
 
 ## Thematic Map Panel
 To facilitate data discovery, we likely want to explore multiple maps at once. Here we'll generate maps for multiple variables, and plot them as a map panel.
@@ -143,6 +142,8 @@ To facilitate data discovery, we likely want to explore multiple maps at once. H
 Can you think of more efficient ways to run this code? There are also other `tmap` tricks to optimize this further, so enjoy your journey!
 
 ```{r message=FALSE, warning=FALSE}
+
+Chi_Zipsf <- Chi_Zips_test
 
  tm_shape(Chi_Zipsf) + tm_fill("ovr65P", 
               style="jenks", pal="BuPu", n=4)
@@ -163,7 +164,7 @@ BlkP <- tm_shape(Chi_Zipsf) + tm_fill("blackP",
               style="jenks", pal="BuPu", n=4) 
 
 Latnx <- tm_shape(Chi_Zipsf) + tm_fill("hispP", 
-              style="jenks", pal="BuPu", n=4, title="Test") 
+              style="jenks", pal="BuPu", n=4, title="hispP") 
 
 WhiP <- tm_shape(Chi_Zipsf) + tm_fill("whiteP", 
               style="jenks", pal="BuPu", n=4) 
@@ -179,13 +180,13 @@ In modern spatial epidemiology, associations must never be taken at face value. 
 We're  done! Well... not so fast. Let's save the data so we don't have to run the codebook again to access the data. Here, we'll save as a `geojson` file. This spatial format is more forgiving with long column names, which is a long-standing challenge with shapefiles. But sometimes it can be written oddly, so double-check the dimensions when reading in later.
 
 ```{r eval=FALSE}
-#st_(Chi_Zipsf, "data/ChiZipMaster.geojson", driver = "GeoJSON")
+#st_write(Chi_Zipsf, "data/ChiZipMaster.geojson", driver = "GeoJSON")
 ```
 
 We could also just  the data as a `CSV` file which may be easier for future linking. For this, we use the `st_drop_geometry()` function to remove the geometry data, so we're just left with the attributes.
 
 ```{r eval=FALSE}
-#.csv(st_drop_geometry(Chi_Zipsf), "data/ChiZipMaster.csv")
+#write.csv(st_drop_geometry(Chi_Zipsf), "data/ChiZipMaster.csv")
 ```
 
 ## More Resources {-}

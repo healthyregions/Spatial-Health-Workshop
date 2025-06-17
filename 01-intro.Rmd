@@ -260,7 +260,7 @@ deso.3152 <- st_transform(deso, 3152)
 
 On spatial data basics & sf:
 
-- https://geocompr.robinlovelace.net/intro.html
+- https://r.geocompx.org/intro.html
 
 - https://geodacenter.github.io/opioid-environment-toolkit/spatial-data-introduction.html 
 
