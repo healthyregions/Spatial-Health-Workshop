@@ -26,6 +26,18 @@ There are multiple resources linked with this workbook. Access the following as 
 - Data for the workshop: [Zip File]()
 - [Github repository](https://github.com/healthyregions/Spatial-Health-Workshop) of the workshop
 - Short link to this workbook: [go.illinois.edu/RSpatial](go.illinois.edu/RSpatial)
+- Slide deck for latest workshop: [Sweden 2025](https://docs.google.com/presentation/d/1FDbxNdHZ4D75wRWKchArLYSGatzgEsDDJr2S2EzCfHs/edit?usp=sharing)
+
+SER 2023 Workshop Details
+
+- [Sign In](https://docs.google.com/forms/d/1eUL4kHaujNVgLnlmSA9zRkSVLp-s1OPoAIls0_gDDEc/edit)
+- [Slide Deck](https://docs.google.com/presentation/d/1Og-RmBloA2_thTKQIP9dAfVMBf_tS39U1V6ZlbVLWrY/edit#slide=id.p)
+
+SER 2022 Workshop Details
+
+- [Sign In](https://docs.google.com/forms/d/e/1FAIpQLSf_TC0sxXDriCbnRtol6exTMzRZTugSMoctoz1uu0cijnktAQ/viewform)
+- [Slide Deck](https://docs.google.com/presentation/d/1c1RirI9Jk_Pk99n2nuCIFZYoeBRzfHat6nR6-ZQGhrI/edit?usp=sharing)
+- [Claim CME credits](https://cme.uchicago.edu/SpatialAnalysis22))
 
 ### Environment Setup {-}
 
