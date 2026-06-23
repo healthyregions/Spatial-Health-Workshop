@@ -6,12 +6,13 @@ In addition to areal data, we can also extract information from individual locat
 - **Area resources:** Grocery stores & Supermarkets, Playgrounds, Daycare centers, Schools, Community centers
 - **Area challenges:** Crime, Superfund sites, Pollution-emitting facilities
 
-Points can also represent *people*, like individual patients residing in an area. Because individual locations for persons is protected health information, we'll focus on point data as resources in the chapter. However, you can reuse the code snippets in this workshop to wrangle patient-level data the same way in a secure environment, under the guidance of your friendly IRB ethics board. 
+Points can also represent *people*, like individual patients residing in an area. Because individual locations for persons is protected health information, we'll focus on point data as resources in the chapter. However, you can reuse the code snippets in this workshop to wrangle patient-level data the same way in a secure environment, under the guidance of your friendly IRB ethics board.
 
 In this example, we'll extend our Chicago example. We'll identify areas with high COVID rates, low geographic access to methadone maintenance therapy, and less access to affordable rental housing units managed by the city. We are interested in locating zip codes that may be especially vulnerable to persons with opioid use disorder who use MOUDs. (This is oversimplified, but our example to work with.)
 
 ## Geocode
-If you start with only addresses, you'll need to geocode. Our methadone maintenance provider dataset is only available as such. Addresses are comprised of characeters that reference a specific place. We will use the network topology service of a *Geocoder* to translate that address to a coordinate in some CRS. 
+
+If you start with only addresses, you'll need to geocode. Our methadone maintenance provider dataset is only available as such. Addresses are comprised of characeters that reference a specific place. We will use the network topology service of a *Geocoder* to translate that address to a coordinate in some CRS.
 
 First we load the `tidygeocoder` to get our geocoding done. Note, this uses the interent to process, so is not suitable for HIPPA protected data like individual, living person addresses. For offline geocoders, check out `Pelias` or `ESRI`.
 
@@ -33,7 +34,7 @@ sample <- geo("2260 N. Elston Ave. Chicago, IL", lat = latitude, long = longitud
 head(sample)
 ```
 
-As we prepare for geocoding, check out the structure of the dataset. Do we need to change anything? The data should be a character to be read properly. 
+As we prepare for geocoding, check out the structure of the dataset. Do we need to change anything? The data should be a character to be read properly.
 
 ```{r}
 str(methadoneClinics)
@@ -48,7 +49,6 @@ methadoneClinics$fullAdd <- paste(as.character(methadoneClinics$Address),
                                   as.character(methadoneClinics$Zip))
 ```
 
-
 We're ready to go! Batch geocode with one function, and inspect:
 
 ```{r}
@@ -58,11 +58,13 @@ address = 'fullAdd', lat = latitude, long = longitude, method="osm")
 head(geoCodedClinics)
 ```
 
-There were two that didn't geocode correctly. You can inspect further. This could involve a quick check for spelling issues; or, searching the address and pulling the lat/long using Google Maps and inputting manually. Or, if we are concerned it's a human or unknown error, we could omit. Sample code is shown below if any nulls were identified, and needed to be removed.
+We should also be intentional about checking if the geocoder gave us any `NA` values:
 
 ```{r}
-#geoCodedClinics2 <- na.omit(geoCodedClinics)
+any(is.na(geoCodedClinics[c('longitude', 'latitude')]))
 ```
+
+All of our data geocoded correctly, so we should be set to move forwards. If we *did* have observations that did not geocode correctly, then we would need to investigate them further, possibly by searching the address and pulling the lat/long using Google Maps, and then inputting it manually.
 
 ## Convert to Spatial Data
 
@@ -76,7 +78,7 @@ methadoneSf <- st_as_sf(geoCodedClinics,
                         crs = 4326)
 ```
 
-## Basic Map of Points 
+## Basic Map of Points
 
 For a really simple map of points -- to ensure they were geocoded and converted to spatial data correctly, we use `tmap`. We'll use the interactive version to view.
 
@@ -121,7 +123,7 @@ tm_shape(Chi_Zipsf) +
   tm_shape(methadoneSf) + tm_dots(size = 0.2, col = "gray20") +
   
   ## "Hack" a manual symbology for dots in the legend
-  tm_add_legend("symbol", col = "gray20", size = .2, labels = "Methadone MOUD") +
+  tm_add_legend("symbol", col = "gray20", size = 0.2, labels = "Methadone MOUD") +
   
   ## Cartographic Styling
   tm_layout(legend.outside = TRUE, legend.outside.position = "right")
@@ -129,9 +131,9 @@ tm_shape(Chi_Zipsf) +
 
 ## Integrate More Data
 
-From here, we can integrate more data. Let's try a different point dataset -- Affordable Rental Housing Developments, as made available by the *City of Chicago Data Portal*. This could be interesting for a number of different reasons -- maybe we hypothesize better outcomes are associated with better access to affordable housing options? Or, we hypothesize the opposite, that mean distance to more population dense housing locations is vulnerable to airborne disease? 
+From here, we can integrate more data. Let's try a different point dataset -- Affordable Rental Housing Developments, as made available by the *City of Chicago Data Portal*. This could be interesting for a number of different reasons -- maybe we hypothesize better outcomes are associated with better access to affordable housing options? Or, we hypothesize the opposite, that mean distance to more population dense housing locations is vulnerable to airborne disease?
 
-For this example, we'll think about this dataset as access to secure and affordable housing. Persons with lower incomes residing in places with fewer developments may be more vulnerable to housing insecurity -> impacts health.
+For this example, we'll think about this dataset as access to secure and affordable housing. Persons with lower incomes residing in places with fewer developments may be more vulnerable to housing insecurity -\> impacts health.
 
 ```{r, warning=FALSE}
 AffHousing <- read.csv("~/Documents/GitHub/Spatial-Health-Workshop/data/Affordable_Rental_Housing_Developments.csv")
@@ -145,7 +147,7 @@ There were a few data points with odd inputs and null values. Remember, we can't
 AffHousing <- na.omit(AffHousing)
 ```
 
-Look at the structure of the object. 
+Look at the structure of the object.
 
 ```{r, warning=FALSE}
 str(AffHousing)
@@ -190,20 +192,16 @@ Let's pull what we learned in the last tutorial, and map everything at once. Whi
                 fill.legend = tm_legend(title='COVID Rt')) + 
 
   ## Affordable Housing Unit Locations
-  tm_shape(AffHousingSf) + tm_bubbles("Units") + 
+  tm_shape(AffHousingSf) + tm_bubbles("Units",
+                                      size.legend = tm_legend(title='Affordable\nRental Units')) + 
   
   ## Methadone MOUD
   tm_shape(methadoneSf) + tm_dots(size = 0.2, col = "gray20") +
   
   ## Cartographic Styling
-  tm_add_legend("symbol", 
-                col = "black", size = .2, 
-                labels = "Affordable Housing") + 
     tm_add_legend("symbol", 
                 col = "gray20", size = .4, 
                 labels = "Methadone MOUD")
-  
-  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
 ```
 
 In RStudio, you could zoom into the plot you created to get a better view. Save as an image, or save as a webpage!
@@ -214,13 +212,12 @@ Save any data you need from this session.
 #st_write(methadoneSf, dsn = "~/Documents/GitHub/Spatial-Health-Workshop/data/methadoneMOUD.geojson")
 ```
 
-
-## Practice in Sweden {-}
+## Practice in Sweden {.unnumbered}
 
 Identify a resource as a point dataset in Sweden. Then:
 
-1. Bring it into the workspace, and do any data wrangling necessary to ensure it is rendered as a spatial data format in the right CRS.
-2. Transform the CRS of the point dataset to the same CRS of the data you used prior, of DeSo boundaries in Sweden.
-3. Overlay the points on top of the DeSo areas, and make a pretty map. 
+1.  Bring it into the workspace, and do any data wrangling necessary to ensure it is rendered as a spatial data format in the right CRS.
+2.  Transform the CRS of the point dataset to the same CRS of the data you used prior, of DeSo boundaries in Sweden.
+3.  Overlay the points on top of the DeSo areas, and make a pretty map.
 
 **Tip:** you can "zoom" into the area of the points by plotting them first, or using the `bbox` parameter in the `tm_shape` function of your DeSo dataset.
